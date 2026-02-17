@@ -1,5 +1,7 @@
 "use client"
 import { useEffect, useState } from 'react'
+import { Button } from '@/components/ui/button'
+import { Menu, X } from 'lucide-react'
 
 const sections = [
   { id: 'about', label: 'About' },
@@ -13,6 +15,7 @@ const sections = [
 export default function NavBar() {
   const [open, setOpen] = useState(false)
   const [active, setActive] = useState('about')
+  const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -32,52 +35,68 @@ export default function NavBar() {
     return () => observer.disconnect()
   }, [])
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   return (
-    <header className="sticky top-0 z-40 border-b border-accent/20 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/70 shadow-sm shadow-accent/5">
-      <div className="section flex h-16 items-center justify-between">
+    <header className={`sticky top-0 z-40 border-b transition-all duration-300 ${
+      scrolled
+        ? 'border-border bg-background/95 backdrop-blur-md shadow-sm'
+        : 'border-transparent bg-background/80 backdrop-blur-sm'
+    }`}>
+      <div className="container flex h-16 items-center justify-between">
+        {/* Logo with gradient */}
         <a
           href="#"
-          className="text-sm font-semibold tracking-wider bg-gradient-to-r from-foreground via-accent to-foreground bg-clip-text text-transparent hover:from-accent hover:via-foreground hover:to-accent transition-all duration-300"
+          className="text-sm font-bold tracking-wider bg-gradient-to-r from-teal-600 to-emerald-500 bg-clip-text text-transparent hover:from-teal-700 hover:to-emerald-600 transition-all duration-200"
         >
           Malik Hassan Raza
         </a>
+
+        {/* Desktop nav */}
         <nav className="hidden gap-1 md:flex">
           {sections.map((s) => (
             <a
               key={s.id}
               href={`#${s.id}`}
-              className={`px-3 py-2 text-sm transition-all duration-200 relative ${
+              className={`px-3 py-2 text-sm rounded-full transition-all duration-200 ${
                 active === s.id
-                  ? 'text-accent font-medium'
-                  : 'text-foreground/85 hover:text-accent'
+                  ? 'text-white bg-gradient-to-r from-teal-600 to-emerald-600 font-medium shadow-sm shadow-teal-500/20'
+                  : 'text-foreground/70 hover:text-foreground hover:bg-muted'
               }`}
             >
               {s.label}
-              {active === s.id && (
-                <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-accent to-transparent" />
-              )}
             </a>
           ))}
         </nav>
-        <button
-          className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-lg border border-accent/30 hover:border-accent hover:bg-accent/10 transition-colors"
+
+        {/* Mobile hamburger */}
+        <Button
+          variant="ghost"
+          size="icon"
+          className="md:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle Menu"
         >
-          <div className="h-4 w-4 text-foreground hover:text-accent transition-colors">☰</div>
-        </button>
+          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+        </Button>
       </div>
+
+      {/* Mobile menu */}
       {open && (
-        <div className="md:hidden border-t border-accent/20 bg-background/95">
-          <div className="section py-2 flex flex-col">
+        <div className="md:hidden border-t border-border bg-background/98 backdrop-blur-md">
+          <div className="container py-3 flex flex-col gap-1">
             {sections.map((s) => (
               <a
                 key={s.id}
                 href={`#${s.id}`}
-                className={`px-2 py-2 text-sm transition-colors rounded-md ${
+                className={`px-4 py-2.5 text-sm transition-colors rounded-xl ${
                   active === s.id
-                    ? 'text-accent font-medium bg-accent/10'
-                    : 'text-foreground/90 hover:text-accent hover:bg-accent/5'
+                    ? 'text-white bg-gradient-to-r from-teal-600 to-emerald-600 font-medium'
+                    : 'text-foreground/80 hover:text-foreground hover:bg-muted'
                 }`}
                 onClick={() => setOpen(false)}
               >

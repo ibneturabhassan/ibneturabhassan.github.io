@@ -1,0 +1,32 @@
+[00:00:02.495] Server  LOG      ✓ Ready in 1640ms
+[00:00:23.000] Server  LOG      ○ Compiling / ...
+[00:00:31.290] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:14.504] Server  LOG      ✓ Compiled in 23ms
+[00:12:30.111] Server  LOG      ✓ Compiled in 284ms
+[00:12:35.585] Server  LOG      ✓ Compiled in 319ms
+[00:12:40.549] Server  LOG      ✓ Compiled in 254ms
+[00:13:46.080] Server  LOG      ✓ Compiled in 248ms
+[00:13:58.205] Server  LOG      ✓ Compiled in 289ms
+[00:14:21.586] Server  LOG      ✓ Compiled in 252ms
+[00:14:28.713] Server  LOG      ✓ Compiled in 250ms
+[00:14:34.220] Server  LOG      ✓ Compiled in 226ms
+[00:17:44.923] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:18:58.222] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:31:48.796] Server  LOG      ✓ Compiled in 487ms
+[00:32:49.966] Server  LOG      ✓ Compiled in 625ms
+[00:34:44.965] Server  LOG      ✓ Compiled in 578ms
+[00:35:00.597] Server  LOG      ✓ Compiled in 493ms
+[00:35:13.991] Server  LOG      ✓ Compiled in 431ms
+[00:35:55.089] Server  LOG      ✓ Compiled in 554ms
+[08:34:09.024] Server  LOG      ✓ Compiled in 288ms
+[09:22:10.642] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[11:39:32.634] Server  ERROR   D:\Portfolio website\portfolio\node_modules\next\dist\server\dev\log-requests.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[11:39:32.646] Server  ERROR   D:\Portfolio website\portfolio\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[11:39:32.659] Server  ERROR   Error: EPIPE: broken pipe, write
+[11:39:32.663] Server  ERROR   D:\Portfolio website\portfolio\node_modules\next\dist\server\dev\log-requests.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[11:39:32.665] Server  ERROR   D:\Portfolio website\portfolio\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[11:39:32.668] Server  ERROR    ⨯ "uncaughtException:" Error: EPIPE: broken pipe, write
+[11:39:32.671] Server  ERROR   D:\Portfolio website\portfolio\node_modules\next\dist\server\dev\log-requests.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[11:39:32.672] Server  ERROR   D:\Portfolio website\portfolio\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[11:39:32.673] Server  ERROR    ⨯ "uncaughtException: " Error: EPIPE: broken pipe, write
+[11:39:33.773] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
