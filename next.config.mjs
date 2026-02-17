@@ -11,6 +11,7 @@ const nextConfig = {
     unoptimized: true,
   },
   turbopack: {},
+  turbopack: {},
   webpack: (config) => {
     config.resolve = config.resolve || {}
     config.resolve.alias = {
