@@ -1,1 +1,11 @@
+.next
 node_modules
+out
+dist
+*.log
+.npm-cache
+tsconfig.tsbuildinfo
+*.png
+*.zip
+_template_preview
+AI Resume - Malik Hassan Raza Fulltime.pdf

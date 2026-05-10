@@ -1,25 +1,11 @@
-import path from 'node:path'
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  output: 'export',
-  // For username.github.io root deploy, keep basePath empty.
-  // basePath: '',
+  output: "export",
   trailingSlash: true,
   images: {
-    unoptimized: true,
-  },
-  turbopack: {},
-  turbopack: {},
-  webpack: (config) => {
-    config.resolve = config.resolve || {}
-    config.resolve.alias = {
-      ...(config.resolve.alias || {}),
-      '@': path.resolve(process.cwd()),
-    }
-    return config
-  },
-}
+    unoptimized: true
+  }
+};
 
-export default nextConfig
+export default nextConfig;
